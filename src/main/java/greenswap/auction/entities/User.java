@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -18,7 +20,7 @@ import java.util.List;
  */
 
 @Entity @Table(name = "user_accounts")
-@Data @NoArgsConstructor @AllArgsConstructor      // lombok boiler code
+@Data @NoArgsConstructor @AllArgsConstructor
 public class User {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,9 +36,11 @@ public class User {
     private String username;
 
     @Column(unique = true, nullable = false)
+    @Email @NotEmpty
     private String email;
 
     @Column(length = 60)
+    @NotEmpty
     private String password;
 
     @Column(name = "profile_picture")
@@ -58,6 +62,8 @@ public class User {
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Product> products;
 
-
+    // for custom user detail
+    public User(User user) {
+    }
 
 }

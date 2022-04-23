@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -51,20 +52,20 @@ class UserRepositoryTest {
     @Test
     void findByEmail() {
         //when
-        User user = underTest.findByEmail("boba@guild.com");
+        Optional<User> user = underTest.findUserByEmail("boba@guild.com");
 
         //then
-        assertEquals(user.getUsername(), "Bobik");
+        assertEquals(user.get().getUsername(), "Bobik");
     }
 
 
     @Test
     void findByUsername() {
         //when
-        User user = underTest.findByUsername("Bobik");
+        Optional<User> user = underTest.findUserByUsername("Bobik");
 
         //then
-        assertEquals(user.getFirstName(), "Boba");
+        assertEquals(user.get().getFirstName(), "Boba");
     }
 
 }
