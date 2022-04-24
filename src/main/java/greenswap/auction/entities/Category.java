@@ -11,7 +11,7 @@ import java.util.Set;
 
 
 @Entity @Table(name = "categories")
-@Data @NoArgsConstructor @AllArgsConstructor      // lombok boiler code
+@Data @NoArgsConstructor @AllArgsConstructor
 public class Category {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

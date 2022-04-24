@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 
 @Entity @Table(name = "cart_items")
-@Data @NoArgsConstructor @AllArgsConstructor      // lombok boiler code
+@Data @NoArgsConstructor @AllArgsConstructor
 public class CartItem {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

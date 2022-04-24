@@ -10,7 +10,7 @@ import java.util.Set;
 
 
 @Entity @Table(name = "shopping_carts")
-@Data @NoArgsConstructor @AllArgsConstructor      // lombok boiler code
+@Data @NoArgsConstructor @AllArgsConstructor
 public class Cart {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

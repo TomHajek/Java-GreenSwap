@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 
 
 @Entity @Table(name = "order_items")
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor  // lombok boiler code
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class OrderItem {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 
 
 @Entity @Table(name = "products")
-@Data @NoArgsConstructor @AllArgsConstructor      // lombok boiler code
+@Data @NoArgsConstructor @AllArgsConstructor
 public class Product {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
